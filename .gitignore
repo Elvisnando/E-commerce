@@ -1,0 +1,26 @@
+# IntelliJ project files
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+#Backend Generated Files
+target/
+*.class
+
+node_modules/
+.vscode/
+
+#go
+go
+backend/src/main/resources/application\.properties
+
+frontend/package\.json
