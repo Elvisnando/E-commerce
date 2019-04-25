@@ -1,0 +1,73 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px auto auto auto;
+    max-width: 1000px;
+}
+
+.TitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding-left: 30px;
+}
+
+.addButton {
+    align-self: flex-end;
+}
+
+.addButton span span{
+    font-size: 60px;
+}
+
+.BodyContainer {
+    padding: 10px;
+}
+
+.globalFieldsContainer {    
+    padding: 30px;    
+}
+
+.globalFieldsContainer .title {
+
+}
+
+.globalFieldsContainer .images {
+    width: 315px;
+}
+
+.images div label {
+    margin-left: 10px;
+}
+
+.globalFieldsContainer .body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.globalFieldsContainer fieldset {
+    border-radius: 30px;
+}
+
+.productField {
+    margin-bottom: 20px;
+    width: 270px;
+    height: 40px;
+}
+
+.little {
+    width: 110px;
+}
+
+.description {
+    width: 460px;
+}
+
+.imagePreview {
+    max-height: 187px;
+}

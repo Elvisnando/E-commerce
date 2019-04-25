@@ -1,0 +1,100 @@
+.ProductContainer {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    align-items: baseline;
+    margin-top: 54px;
+}
+
+.ProductContainer .subContainer {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    min-width: 400px;
+    margin: 30px;
+    align-items: center;
+}
+
+.searchBarDiv {
+    margin: 0px;
+    
+}
+
+.SearchBarContainer {
+    padding: 10px 10px 10px 20px;
+    margin: 0px 0px 30px 0px;
+    border-radius: 37px !important;
+    width: 100%;
+}
+
+.SearchBarContainer fieldset {
+    border-radius: 30px !important;
+}
+
+.products {
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+}
+
+.products .cardItem {
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.products .cardItem .cardContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    height: 250px;
+}
+
+.products .cardItem .cardContent .name{
+    font-size: 19px;
+}
+
+.products .cardItem .cardContent div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-left: 30px;
+    text-align: right;
+}
+
+.products .cardItem .cardContent div p{
+    margin: 1px;
+    font-size: 17px;
+}
+
+.products .cardItem .cardContent .label {
+    font-size: 13px;
+}
+
+.products .cardItem .cardContent img {
+    max-width: 70%;
+    height: auto;
+    max-height: 100%;
+    border-radius: 15px;
+}
+
+.products .cardItem .cardContent div {
+    max-width: 50%;
+    max-height: 100%;
+    border-radius: 15px;
+}
+
+.products .cardItem .cardItem button {
+    width: inherit;
+    height: inherit;
+}
+
+.FilterSideBarContainer {
+    width: 30%;
+    margin: 30px;
+    min-width: 365px;
+}

@@ -1,0 +1,153 @@
+.profileContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.profileContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.ProfilePaper {   
+    padding: 30px;
+    max-width: 800px;
+    margin: 50px auto auto auto;
+    overflow: hidden;
+}
+
+.ComponentPaper {   
+    margin-bottom: 50px;
+    width: 660px;
+}
+
+.profileDescription {
+    padding: 10px;
+}
+
+.ProfilePaper h4 {
+    margin: 10px;
+}
+
+.ProfilePaper .cardList{
+    display: flex;
+}
+
+.ProfilePaper .accountList{
+    display: flex;
+    flex-flow: column;
+}
+
+.accountList .MuiFormControl-marginNormal-97 {
+    margin: 8px auto 8px auto !important;
+}
+
+.ProfilePaper .component {
+    display: flex;
+    align-content: left;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accountList .component {
+    margin: auto auto auto 10px;
+}
+
+.accountList .component input{
+    width: 500px;
+}
+
+/* .accountList .component span{
+    
+    width: 70px;
+} */
+
+.ProfilePaper .cardItem {
+    margin: 10px;
+    min-width: 30%;
+}
+
+.BillingPaper .component {
+    min-width: 700px;
+}
+/* 
+.MuiButton-label-231 {
+    margin: 0px !important;
+}
+
+.buttonContainer .MuiButton-root-151 {
+    margin: 0px !important;
+}
+
+.buttonContainer .MuiButtonBase-root-82 {
+    margin: auto auto auto 10px;
+} */
+
+.billingInfoContent {
+    margin: 10px auto 20px auto;
+}
+
+.billingInfoContent > div:first-child {
+    background-color: #f3f3f3 !important;
+}
+
+.billingInfoElementNumber {
+    margin: auto auto auto 10px !important;
+}
+
+.billingInfoElementExpiry {
+    margin: auto 197px auto auto !important;
+}
+
+.billingListLabel {
+    display: flex;
+    margin-top: 10px;  
+}
+
+.billingListLabel .number {
+    margin: auto auto auto 34px !important;
+}
+
+.billingListLabel .expiry {
+    margin: auto 246px auto auto !important;
+}
+
+.ExpansionPanelDetails {
+    padding-top: 24px !important;
+    display: flex;
+}
+
+.ExpansionPanelDetails .first{
+    margin-left: 10px;
+    width: 50%;
+    align-content: center;
+}
+
+.ExpansionPanelDetails .second {
+    margin-left: 110px;
+    width: 50%;
+    align-content: center
+}
+
+.addressList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+}
+
+.addressList .element {
+    margin: 10px;
+    /* width: 260px;
+    height: 150px; */
+    padding: 10px;
+}
+
+.addressList .element .address {
+    min-width: 240px;
+    min-height: 150px;
+}
+
+.component > div:first-child {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+}

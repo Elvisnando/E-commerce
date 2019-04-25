@@ -1,0 +1,208 @@
+import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import {sendAllProductTest} from '../../services/ApiCall';
+import FilterSideBar from './FilterSideBar';
+import SearchBar from "../../components/SearchBar";
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import {connect} from 'react-redux';
+
+
+const styles = theme => ({
+      head: {
+        backgroundColor: theme.palette.common.black,
+        color: theme.palette.common.white,
+      },
+      body: {
+        fontSize: 14,
+      },
+      root: {
+        width: '100%',
+        marginTop: theme.spacing.unit * 3,
+        overflowX: 'auto',
+      },
+      table: {
+        minWidth: 700,
+      },
+      row: {
+        '&:nth-of-type(odd)': {
+          backgroundColor: theme.palette.background.default,
+        }},
+      ListAndFilterContainer: {
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        marginLeft: 1,
+      },
+      leftDiv: {
+        width: '70%',
+        marginLeft: 50,
+        marginRight: 10,
+        marginTop:10,
+      },
+      rightDiv: {
+        width: '30%',
+        marginRight: 10,
+        marginTop:10,
+      },
+      searchBar: {
+        width: '66.7%',
+        marginLeft: 50,
+        marginRight: 10,
+        marginTop:10,
+      },
+      fab: {
+        margin: theme.spacing.unit,
+        color: "yellow",
+      },
+    });
+  
+  let id = 0;
+  function createData(name, location, availability, price, expireDate) {
+    id += 1;
+    return { id, name, location, availability, price, expireDate };
+  }
+  
+    const rows = new Array()
+    
+    class ListProductComponent extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: [this.props.products.id],
+            arrayAvailability: [this.props.products.availability],
+            arrayLocation: [this.props.products.origin],
+            producer: [],
+            price: [this.props.products.price],
+            min: [],
+            max: [],
+            arrayNames: [this.props.products.name],
+            expireDate: [this.props.products.expiryDate],
+            checkedAvailability: true,
+            product: {
+              name: '',
+          },
+          producerToSend: '',
+          minToSend: '',
+          maxToSend: '',
+          nameToSend: '',
+          expireDateToSend: '',
+          locationToSend: '',
+        }
+    }
+
+    listOfProducts() {
+    if(this.state.arrayNames.length === 0){
+      debugger;
+    let name = this.state.nameToSend;
+    let producer = this.state.producerToSend;
+    let location = this.state.locationToSend;
+    let expireDate = this.state.expireDateToSend;
+    console.log({expireDate});
+    let min = this.state.minToSend;
+    let max = this.state.maxToSend;
+    let availability = this.state.checkedAvailability;
+    console.log({availability});
+    sendAllProductTest(name, producer, location, expireDate, min, max, availability, this.success, this.error);
+    }
+    }
+    
+     success = async (response) => {
+        debugger;
+        let res = await response.json();
+        let idA = [];
+        let names = [];
+        let locations = [];
+        let availability = [];
+        let priceA = [];
+        let expireDateA = [];
+        res.forEach(r => names.push(r.name));
+        res.forEach(r => locations.push(r.origin));
+        res.forEach(r => availability.push(r.availability));
+        res.forEach(r => priceA.push(r.price));
+        res.forEach(r => expireDateA.push((r.expiryDate).toString()));
+        res.forEach(r => idA.push(r.id));
+        debugger;
+        for (let i = 0; i < names.length; i++) {
+            rows.push(createData(names[i], locations[i], availability[i], priceA[i], expireDateA[i]))
+        }
+        this.setState({arrayNames: names, arrayLocation: locations, arrayAvailability: availability, expireDate: expireDateA, id: idA });
+     }
+     error(){
+          
+     }
+
+    // RENDER 
+    render() {
+    
+    const { classes } = this.props;
+    console.log(this.props.products);
+    debugger;
+    return (
+      // onLoad={this.successFromSearchBar2()}
+      <div >
+        <div className={classes.searchBar}>
+        <SearchBar/>
+        </div>
+        <div className={classes.ListAndFilterContainer}>
+        <div className={classes.leftDiv}>
+        <Paper >
+        <Table >
+          <TableHead>
+            <TableRow>
+              <TableCell>Products Names</TableCell>
+              <TableCell align="right">Origin</TableCell>
+              <TableCell align="right">Availability</TableCell>
+              <TableCell align="right">Price</TableCell>
+              <TableCell align="right">Expire Date</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {this.props.products.productsList.map(row => (
+              <TableRow className={classes.row} key={row.id}>
+                <TableCell component="th" scope="row">
+                  {row.name}
+                </TableCell>
+                <TableCell align="right">{row.origin}</TableCell>
+                <TableCell align="right">{row.availability}</TableCell>
+                <TableCell align="right">{row.price}</TableCell>
+                <TableCell align="right">{row.expiryDate}</TableCell>
+                <TableCell align="right">
+                <Fab  aria-label="Add" className={classes.fab}><AddIcon /></Fab>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+
+
+        </Table>
+      </Paper>
+      </div>
+      
+      <div className={classes.rightDiv}>
+      <FilterSideBar />
+      </div>
+      
+      </div>
+      </div>
+    )
+  }
+}
+
+ListProductComponent.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+  
+  const mapStateToProps = ({ products }) => {
+    return {
+        products
+    }
+}
+export default connect(mapStateToProps)(withStyles(styles)(ListProductComponent));

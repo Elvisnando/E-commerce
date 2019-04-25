@@ -1,0 +1,191 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .wrap {
+    height: 100%;
+  }
+
+  .navBar {
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(115, 115, 115, 0.7);
+    position: fixed;
+    width: 100%;
+  }
+
+  #errorMessage {
+    color: red;
+  }
+
+  .navBar a {
+    text-decoration: none;
+    padding-right: 50px;
+  }
+
+.navBar a span span span {
+  font-size: 30px;
+  color: white;
+}
+  .navBar a:link {
+    color: white;
+}
+
+  .navBar a:visited {
+    color: white;
+}
+
+  .navBar a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+  .footer {
+    display: flex;
+    width: 100%;
+    background-color:black;
+    color: white;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 0;
+    margin-bottom: 0%;
+    bottom: 0;
+  }
+
+  .footerChild {
+    max-height: inherit;
+    min-width: 190px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .footerChild a {
+    text-decoration: none;
+  }
+
+  .footerChild li a {
+    padding: 20% 16px;
+  }
+
+  .footerChild a:link {
+    color: white;
+}
+
+  .footerChild a:visited {
+    color: white;
+}
+
+  .footerChild a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+  .footerChild ul{
+    margin: 0px;
+  }
+
+  .footerChild a{
+    margin: 0px;
+  }
+
+  .footerChildTitle {
+    display: flex;
+    align-items: center;
+  }
+
+
+  .sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active{
+    background-color: #357991;
+  }
+
+  .welcome{
+    background-color: #333;
+  }
+
+  .welcome:hover{
+    background-color: #333;
+  }
+
+  .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
